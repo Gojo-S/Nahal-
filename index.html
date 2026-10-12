@@ -172,10 +172,17 @@ svg{display:block}
 @media(min-width:900px){.cat-grid{grid-template-columns:repeat(5,1fr);gap:14px}}
 @media(max-width:599px){
   .cat-grid{
-    display:flex;gap:10px;padding-bottom:4px;
-    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    display:flex;gap:10px;
+    padding:0 0 4px;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:var(--gut);
+    -webkit-overflow-scrolling:touch;
   }
   .cat-grid>*{flex:0 0 62%;scroll-snap-align:start}
+  .cat-grid::before,
+  .cat-grid::after{
+    content:"";flex:0 0 var(--gut);
+  }
 }
 
 .cat-card{
@@ -234,6 +241,18 @@ svg{display:block}
 }
 .rail::-webkit-scrollbar{display:none}
 .rail>*{scroll-snap-align:start;flex:0 0 62%}
+
+/* رفع باگ RTL: spacer فیزیکی برای ریل در موبایل */
+@media(max-width:767px){
+  .rail{
+    padding:0 0 6px;
+    scroll-padding-inline:var(--gut);
+  }
+  .rail::before,
+  .rail::after{
+    content:"";flex:0 0 var(--gut);
+  }
+}
 
 /* ===== Product Card ===== */
 .p{position:relative}
@@ -456,6 +475,8 @@ details li:hover{opacity:1;padding-inline-start:4px}
     max-width:1440px;margin:0 auto;
   }
   .rail>*{flex:none}
+  .rail::before,
+  .rail::after{display:none}
 }
 </style>
 </head>
