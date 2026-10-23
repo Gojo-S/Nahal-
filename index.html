@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500;1,600&family=Vazirmatn:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* ... (همان CSS قبلی بدون تغییر) ... */
 :root{
   --cream:#f7f4ee; --paper:#fffcf7; --blush:#eedcd5; --teal:#005a63; --teal-deep:#004850;
   --pink:#f78ce8; --ink:#1c1c1e; --muted:#8b8b8b; --leaf:#4f8d58; --gold:#c9962f; --line:#ece6dd;
@@ -69,7 +68,6 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .bld{position:absolute;left:0;top:0;width:520px;height:720px;transform-origin:0 0;pointer-events:none;z-index:5;
   transition:transform 1.05s cubic-bezier(.65,0,.25,1);transform:translate(350px,44px) scale(.8);--mx:0;--my:0}
 #stage[data-page=menu] .bld{transform:translate(-14px,338px) scale(.4)}
-#stage[data-page=events] .bld{transform:translate(896px,336px) scale(.4)}
 #stage[data-page=bag] .bld{transform:translate(-14px,338px) scale(.4)}
 #stage[data-page=thanks] .bld{transform:translate(-14px,338px) scale(.4)}
 .bld img{width:100%;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.2)}
@@ -132,7 +130,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .bi span{display:block;font-size:9px;color:var(--muted);margin-top:2px;letter-spacing:.06em}
 
 /* menu page */
-.P-menu,.P-events{inset:0}
+.P-menu{inset:0}
 .mtitle{position:absolute;right:68px;top:90px;width:300px;text-align:right}
 .mtitle h1{margin:20px 0 4px;font-size:48px;line-height:1;font-weight:900;color:var(--ink)}
 .mpanel{position:absolute;right:360px;top:88px;width:794px;height:528px;overflow:hidden}
@@ -181,37 +179,6 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .th img{width:100%;height:100%;object-fit:cover}
 .th.on{box-shadow:inset 0 0 0 2px var(--teal),0 6px 12px rgba(0,90,99,.25);background:#e8f2f1;transform:translateY(-3px) scale(1.08)}
 .hint{position:absolute;right:0;width:480px;bottom:90px;text-align:center;font-family:var(--f-body);font-size:12px;color:var(--muted)}
-
-/* events */
-.cal{position:absolute;right:68px;top:84px;width:676px;height:534px;overflow:hidden;border-radius:20px}
-.chead{display:flex;align-items:center;padding:30px 28px 0 26px;gap:12px}
-.chead h2{margin:0;font-size:34px;line-height:1;font-family:var(--f-body);font-weight:900;min-width:200px}
-.wk{display:grid;grid-template-columns:repeat(7,1fr);padding:14px 22px 0;font-size:8px;letter-spacing:.16em;color:var(--muted);font-weight:500}
-.wk span{padding-right:8px;padding-bottom:5px}
-.days{display:grid;grid-template-columns:repeat(7,1fr);grid-auto-rows:62px;margin:0 22px;border-top:1.5px solid var(--teal);position:relative}
-.dc{border-left:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:6px 0 0 8px;position:relative;font-family:var(--f-display);font-size:12px;overflow:hidden;transition:background .3s}
-.dc.has{cursor:pointer}
-.dc.has:hover{background:radial-gradient(circle at 50% 55%,rgba(238,220,213,.55),transparent 75%)}
-.dc .nm{position:absolute;left:3px;right:3px;bottom:4px;text-align:center;font-family:var(--f-body);font-size:7.5px;line-height:1.15;color:#6b4c45}
-.dc .ring{position:absolute;left:3px;top:2px;width:24px;height:24px;pointer-events:none}
-.dc .ring circle{fill:none;stroke:var(--teal);stroke-width:1.6;stroke-dasharray:80;stroke-dashoffset:80;animation:draw .7s .05s ease forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.dc.sel{color:var(--teal);font-weight:600}
-.dn{animation:dayin .5s cubic-bezier(.22,.9,.3,1) both;animation-delay:calc(var(--i)*9ms)}
-@keyframes dayin{from{opacity:0;transform:translateX(calc(var(--dir,1)*22px))}to{opacity:1;transform:none}}
-.ticketwrap{position:absolute;left:762px;top:104px;width:392px}
-.ticket{height:172px;display:flex;overflow:hidden;position:relative;border-radius:14px}
-.stub{width:62px;background:linear-gradient(180deg,var(--teal),var(--teal-deep));color:#fff;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;gap:0}
-.stub b{font-family:var(--f-display);font-size:28px;font-weight:500;line-height:1.05}
-.tbody{flex:1;padding:16px 18px 14px 20px;position:relative;min-width:0}
-.tbody h3{margin:0 0 4px;font-size:16px;font-weight:800;padding-left:36px}
-.tbody .meta{font-size:8px;letter-spacing:.14em;color:var(--muted);font-weight:500;margin-bottom:8px}
-.tbody p{margin:0;font-size:11px;line-height:1.5;color:#6a4b45}
-.tbody .foot{position:absolute;left:20px;right:16px;bottom:12px;display:flex;align-items:center;justify-content:space-between}
-.left-seats{font-size:9px;color:var(--muted)}
-.left-seats b{color:var(--teal)}
-.btn.ghost{background:none;box-shadow:inset 0 0 0 1.5px var(--teal);color:var(--teal)}
-.stamp{position:absolute;right:92px;bottom:20px;border:2px solid var(--leaf);color:var(--leaf);font-weight:600;font-size:11px;letter-spacing:.18em;padding:3px 9px;border-radius:5px;transform:rotate(-9deg);background:rgba(255,255,255,.5)}
 
 /* bag */
 .R-bag,.R-thanks{left:758px;top:88px;width:398px;height:528px}
@@ -303,23 +270,12 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   .pc .tile{height:92px}
 
   #mDetail{padding-bottom:0}
-  .dstage{position:relative;right:auto;top:auto;width:100%;height:230px;margin-top:34px}
-  .dart{width:290px;height:290px}
+  .dstage{position:relative;right:auto;top:auto;width:100%;height:200px;margin-top:48px;margin-bottom:6px}
+  .dart{width:200px;height:200px;border-width:4px}
   .dinfo{position:static;width:auto;padding:0 20px 14px;right:auto}
   .buy{flex-wrap:wrap}
   .strip{position:relative;height:74px;margin-top:6px;justify-content:safe center;overflow-x:auto;padding:0 12px;scrollbar-width:none;gap:8px}
   .th{flex:none}
-
-  .cal{position:relative;right:auto;top:auto;width:auto;height:auto;margin:16px 16px 0;padding-bottom:46px}
-  .chead{padding:26px 14px 0 12px;gap:6px}
-  .chead h2{font-size:30px;min-width:0;flex:1}
-  .wk{padding:12px 8px 0;font-size:7px;letter-spacing:.08em}
-  .days{margin:0 8px;grid-auto-rows:54px}
-  .dc{padding:5px 0 0 5px;font-size:11px}
-  .dc .nm{display:none}
-  
-  .ticketwrap{position:relative;left:auto;top:auto;width:auto;margin:18px 16px 24px}
-  .ticket{height:auto;min-height:190px}
 
   #stage[data-page=bag] .R-bag,#stage[data-page=thanks] .R-thanks{margin-top:196px;width:auto;left:auto;top:auto;height:auto;position:relative}
   .R-bag,.R-thanks{padding:0 16px 20px}
@@ -340,7 +296,6 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
     <nav class="nav" aria-label="Main">
       <button data-go="home">خانه</button>
       <button data-go="menu">فروشگاه</button>
-      <button data-go="events">رویدادها</button>
       <button data-go="bag">سبد خرید</button>
     </nav>
     <div class="tools">
@@ -378,21 +333,6 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
         <div class="mview hide" id="mDetail"></div>
       </div>
     </section>
-
-    <section class="layer P-events" data-for="events" id="pEvents">
-      <div class="cal card rise" style="--i:0" id="cal">
-        <div class="chead">
-          <button class="arr" id="prevM">‹</button>
-          <h2 id="monthT">آبان</h2>
-          <button class="arr" id="nextM">›</button>
-        </div>
-        <div class="wk"><span>ش</span><span>ی</span><span>د</span><span>س</span><span>چ</span><span>پ</span><span>ج</span></div>
-        <div class="days" id="days"></div>
-      </div>
-      <div class="ticketwrap">
-        <div class="card ticket rise" style="--i:3" id="ticket"></div>
-      </div>
-    </section>
   </div>
 
   <footer class="dock glass">
@@ -401,8 +341,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
     <div class="open">پاسخگویی: ۹ تا ۱۸</div>
     <div class="icons" id="dockIcons">
       <button data-go="home" aria-label="Home"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 2 12h3v8h5v-5h4v5h5v-8h3Z"/></svg></button>
-      <button data-go="menu" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5ZM17 11h2a2.5 2.5 0 0 1 0 5h-2M8 3c0 2 2 2 0 4M12 3c0 2 2 2 0 4"/></svg></button>
-      <button data-go="events" aria-label="Events"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></button>
+      <button data-go="menu" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9.5V19a1 1 0 0 0 1 1h4.5v-4.5a3 3 0 0 1 6 0V20h4.5a1 1 0 0 0 1-1V9.5"/><path d="M2.5 9.5 4.2 4.3A1.5 1.5 0 0 1 5.6 3.3h12.8a1.5 1.5 0 0 1 1.4 1L21.5 9.5a2.5 2.5 0 0 1-4.5 1.2 2.5 2.5 0 0 1-4.5 0 2.5 2.5 0 0 1-4.5 0 2.5 2.5 0 0 1-4.5-1.2Z"/></svg></button>
       <button data-go="bag" aria-label="My bag" id="bagBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6ZM9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="badge" id="bagBadge">۰</span></button>
     </div>
   </footer>
@@ -417,10 +356,8 @@ const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const stage = $('#stage'), scroller = $('#scroller');
 const money = n => n.toLocaleString('fa-IR') + ' تومان';
-// نام عکس‌ها با پیشوند ./ برای اطمینان از مسیر نسبی
 const img = id => './' + id + '.jpg';
 
-// لیست محصولات
 const MENU = [
   { id: 'p1', cat: 'earrings', name: 'حلقه طلایی', desc: 'دست‌ساز با مهره‌های سیاه.', opts: [['تک', 320000], ['جفت', 600000]], def: 0 },
   { id: 'p2', cat: 'earrings', name: 'پاپیون کریستال', desc: 'پاپیون مشکی درخشان.', opts: [['جفت', 280000]], def: 0 },
@@ -439,11 +376,9 @@ const byId = id => MENU.find(p => p.id === id);
 
 const S = {
   page: 'home', filter: 'all', sel: null, optI: 0, qty: 1,
-  cart: [], berries: 1250, order: null,
-  month: 7, selDate: '2026-11-18', reserved: new Set()
+  cart: [], berries: 1250, order: null
 };
 
-// تنظیم سایز صحنه
 let scale = 1;
 const mq = matchMedia('(max-width: 820px)');
 const isM = () => mq.matches;
@@ -454,7 +389,6 @@ function fit() {
 }
 new ResizeObserver(fit).observe($('#fit')); mq.addEventListener('change', fit);
 
-// ابزارک‌ها
 let toastT;
 function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 2200); }
 function sRect(el) { const r = el.getBoundingClientRect(), s = stage.getBoundingClientRect(); return { x: (r.left - s.left)/scale, y: (r.top - s.top)/scale, w: r.width/scale, h: r.height/scale }; }
@@ -475,7 +409,7 @@ const cartTotal = () => S.cart.reduce((n,i)=>n+byId(i.id).opts[i.o][1]*i.q, 0);
 function updateBadge() { const b = $('#bagBadge'); b.textContent = cartCount().toLocaleString('fa-IR'); b.hidden = cartCount()===0; }
 
 function renderSide() {
-  const NAV = [['home','خانه'], ['menu','فروشگاه'], ['events','رویدادها'], ['bag','سبد خرید']];
+  const NAV = [['home','خانه'], ['menu','فروشگاه'], ['bag','سبد خرید']];
   $('#side').innerHTML = NAV.map(([k,l], i) => `<button class="rise-l" style="--i:${i+3}" data-go="${k}" class="${S.page===k?'on':''}">${l}<span class="chev">‹</span></button>`).join('');
 }
 
@@ -564,7 +498,7 @@ function checkout() {
   const total = cartTotal();
   S.order = { id: 'NH-' + Math.floor(Math.random()*9000+1000), total, items: S.cart.map(i=>({...i, p: byId(i.id)})) };
   S.cart = []; updateBadge(); renderThanks(); go('thanks');
-  const from = S.berries; S.berries += Math.round(total/1000);
+  S.berries += Math.round(total/1000);
   $('#berryN').textContent = S.berries.toLocaleString('fa-IR');
   setTimeout(()=>burst(560,300,'♥',12), 700);
 }
@@ -582,32 +516,6 @@ function renderThanks() {
     <button class="btn" data-go="home">بازگشت ←</button></div>`;
 }
 
-const EVENTS = { '2026-11-18': 'ورکشاپ ساخت دستبند', '2026-11-22': 'حراج ویژه', '2026-12-05': 'نمایشگاه' };
-function renderCal() {
-  const m = S.month, y = 2026;
-  const monthsFa = ['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
-  $('#monthT').textContent = monthsFa[m] + ' ' + y;
-  let h = '';
-  for(let i=1; i<=30; i++) {
-    const key = `2026-${String(m+1).padStart(2,'0')}-${String(i).padStart(2,'0')}`;
-    const t = EVENTS[key], sel = S.selDate===key && t;
-    h += `<div class="dc ${t?'has':''} ${sel?'sel':''} dn" style="--i:${i}" ${t?`data-day="${key}"`:''}>
-      ${sel?'<svg class="ring" viewBox="0 0 28 28"><circle cx="14" cy="14" r="11.5" transform="rotate(-90 14 14)"/></svg>':''}
-      <span>${i}</span>${t?`<span class="nm">${t}</span>`:''}
-    </div>`;
-  }
-  $('#days').innerHTML = h;
-  renderTicket();
-}
-function renderTicket() {
-  const t = EVENTS[S.selDate]; if(!t) { $('#ticket').style.display='none'; return; }
-  $('#ticket').style.display='flex';
-  const res = S.reserved.has(S.selDate);
-  $('#ticket').innerHTML = `<div class="stub"><small>آبان</small><b>18</b></div>
-   <div class="tbody"><h3>${t}</h3><div class="meta">ساعت ۱۶:۰۰</div><p>در این رویداد به ساخت و طراحی اکسسوری می‌پردازیم.</p>
-   <div class="foot"><span class="left-seats">ظرفیت: <b>${res?7:8}</b></span>${res?'<span class="stamp">رزرو</span>':'<button class="btn" data-seat>رزرو</button>'}</div></div>`;
-}
-
 function layers() {
   $$('.layer').forEach(l => l.classList.toggle('on', l.dataset.for.split(' ').includes(S.page)));
   $$('.nav button').forEach(b => b.classList.toggle('on', b.dataset.go===S.page || (b.dataset.go==='menu' && S.page==='menu')));
@@ -617,14 +525,13 @@ function go(p) {
   if(p === 'menu' && S.sel) { S.sel = null; $('#mDetail').classList.add('hide'); $('#mGrid').classList.remove('hide'); }
   if(p === 'bag') renderBag();
   if(p === 'menu') renderGrid();
-  if(p === 'events') renderCal();
   S.page = p; stage.dataset.page = p;
   renderSide(); layers();
   if(isM()) scroller.scrollTop = 0;
 }
 
 document.addEventListener('click', e => {
-  const t = e.target.closest('[data-go],[data-open],[data-quick],[data-filter],[data-opt],[data-q],[data-add],[data-cq],[data-rm],[data-checkout],[data-day],[data-seat]');
+  const t = e.target.closest('[data-go],[data-open],[data-quick],[data-filter],[data-opt],[data-q],[data-add],[data-cq],[data-rm],[data-checkout]');
   if(!t) return;
   const d = t.dataset;
   if(d.go) return go(d.go);
@@ -637,19 +544,15 @@ document.addEventListener('click', e => {
   if(d.cq) { const [i, dl] = d.cq.split(':').map(Number); S.cart[i].q = Math.max(1, S.cart[i].q+dl); updateBadge(); renderBag(); return; }
   if(d.rm !== undefined) { const row = t.closest('.brow'); row.classList.add('out'); setTimeout(()=>{ S.cart.splice(+d.rm, 1); updateBadge(); renderBag(); }, 250); return; }
   if('checkout' in d) return checkout();
-  if(d.day) { S.selDate = d.day; renderCal(); return; }
-  if('seat' in d) { S.reserved.add(S.selDate); toast('صندلی رزرو شد'); renderTicket(); burstAt(t, '♥'); return; }
 });
 
 $('#berryPill').onclick = e => { toast('امتیاز: ' + S.berries.toLocaleString('fa-IR')); burstAt(e.currentTarget, '✦'); };
 
-// Drag Image
 let drag=null;
 document.addEventListener('pointerdown', e => { const s=e.target.closest('#dstage'); if(!s)return; drag={x:e.clientX}; s.setPointerCapture(e.pointerId); });
 document.addEventListener('pointermove', e => { if(!drag)return; const dx=(e.clientX-drag.x)/scale; const dart=$('#dart'); if(dart) dart.style.transform=`perspective(800px) rotateY(${dx*0.5}deg)`; });
 document.addEventListener('pointerup', () => { drag=null; const dart=$('#dart'); if(dart) dart.style.transform=''; });
 
-// Petals
 (function(){
   const c=$('#petals'); const cols=['#eedcd5','#e0cdc5','#d9c3ba'];
   for(let i=0;i<16;i++){ const p=document.createElement('i'); p.className='petal'; const s=6+Math.random()*8;
@@ -657,8 +560,7 @@ document.addEventListener('pointerup', () => { drag=null; const dart=$('#dart');
     c.appendChild(p); }
 })();
 
-// Boot
-renderHome(); renderGrid(); renderCal(); renderSide(); updateBadge(); fit();
+renderHome(); renderGrid(); renderSide(); updateBadge(); fit();
 stage.classList.add('noanim'); layers();
 requestAnimationFrame(()=>requestAnimationFrame(()=>{
   stage.classList.remove('noanim');
